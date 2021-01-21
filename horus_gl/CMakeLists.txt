@@ -67,6 +67,7 @@ PUBLIC
     OpenGL::GL
     glfw
     glad
+    glm
 )
 
 # Setting custom commandos to copy all needed files to the right location
