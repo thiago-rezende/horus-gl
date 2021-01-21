@@ -20,7 +20,7 @@ project(HorusGL
         LANGUAGES CXX)
 
 # Generate an config.h file based on config.in file
-configure_file(${CMAKE_SOURCE_DIR}/application/config.in ${CMAKE_SOURCE_DIR}/application/config.h @ONLY NEWLINE_STYLE LF)
+configure_file(${CMAKE_SOURCE_DIR}/horus_gl/config.in ${CMAKE_SOURCE_DIR}/horus_gl/config.h @ONLY NEWLINE_STYLE LF)
 
 # Setting the install prefix
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR})
@@ -49,20 +49,20 @@ option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled heade
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
-option(MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+option(HORUS_GL_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
 
 # Setting the project folders
-add_subdirectory(application)
+add_subdirectory(horus_gl)
 
 # Visual Studio Config
 if(MSVC)
     ## Enable folders
     set_property(GLOBAL PROPERTY USE_FOLDERS ON)
     ## Application
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT application)
-    set_property(TARGET application PROPERTY FOLDER "Application")
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT horus_gl)
+    set_property(TARGET horus_gl PROPERTY FOLDER "Application")
     ## Utils
-    set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
+    set_property(TARGET copy_resources_horus_gl PROPERTY FOLDER "Utils")
     ## Vendor
     # Spdlog
     set_property(TARGET spdlog PROPERTY FOLDER "Vendor/Spdlog")

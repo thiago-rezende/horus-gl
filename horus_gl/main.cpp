@@ -1,4 +1,7 @@
-#include <application/pch.h>
+/* HorusGL */
+#include <horus.h>
+
+/* CMake Configured File */
 #include <config.h>
 
 int main()

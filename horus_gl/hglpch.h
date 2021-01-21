@@ -1,21 +1,15 @@
 /**
- * @file pch.h
+ * @file hglpch.h
  * @author Thiago Rezende (thiago-rezende.github.io)
- * @brief Pre-Compiled Header
+ * @brief HorusGL pre-compiled header
  * @version 0.1
- * @date 2020-09-26
+ * @date 2021-01-21
  *
- * @copyright Copyright (c) 2020 Thiago Rezende
+ * @copyright Copyright (c) 2021 Thiago Rezende
  *
  */
 
 #pragma once
-
-/* StdLib Things */
-#include <iostream>
-
-/* Horus Logger */
-#include <application/core/logger.h>
 
 /* Windows Things */
 #ifdef WIN32
@@ -33,3 +27,7 @@
 #include <Windows.h>
 
 #endif // WIN32
+
+/* StdLib Things */
+#include <iostream>
+#include <string>

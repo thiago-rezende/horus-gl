@@ -31,7 +31,7 @@
  ```
     .
     ├── .github                     # Repository stuff.
-    ├── horus-gl                    # HorusGL folder.
+    ├── horus_gl                    # HorusGL folder.
     |    ├── assets                 # Assets folder.
     |    ├── horus                  # HorusGL files.
     |    |   └── core               # Core functionalities folder.
