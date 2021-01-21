@@ -57,10 +57,15 @@ PUBLIC
     ${HORUS_GL_INCLUDE_DIRS}
 )
 
+# Find OpenGL
+find_package(OpenGL REQUIRED)
+
 # HorusGL libraries
 target_link_libraries(horus_gl
 PUBLIC
     spdlog::spdlog_header_only
+    OpenGL::GL
+    glfw
 )
 
 # Setting custom commandos to copy all needed files to the right location

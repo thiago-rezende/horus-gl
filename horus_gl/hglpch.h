@@ -31,3 +31,6 @@
 /* StdLib Things */
 #include <iostream>
 #include <string>
+
+/* GLFW */
+#include <GLFW/glfw3.h>

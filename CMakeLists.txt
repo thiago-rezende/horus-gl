@@ -45,11 +45,21 @@ set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 # Spdlog options
 option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled header to speed up compilation time" ON)
 
+# GLFW options
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" OFF)
+option(GLFW_BUILD_TESTS "Build the GLFW test programs" OFF)
+option(GLFW_BUILD_DOCS "Build the GLFW documentation" OFF)
+option(GLFW_INSTALL "Generate installation target" OFF)
+option(GLFW_VULKAN_STATIC "Assume the Vulkan loader is linked with the application" OFF)
+option(USE_MSVC_RUNTIME_LIBRARY_DLL "Use MSVC runtime library DLL" ON)
+
 # Adding the vendor libs directories
 add_subdirectory(${VENDOR}/spdlog)
+add_subdirectory(${VENDOR}/glfw)
 
 # Setting project options
-option(HORUS_GL_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
+option(HORUS_GL_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" ON)
 
 # Setting the project folders
 add_subdirectory(horus_gl)
