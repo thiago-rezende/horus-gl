@@ -1,19 +1,38 @@
 # Include dirs
 set(HORUS_GL_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${VENDOR}/imgui
 )
 
 # Header files
 set(HORUS_GL_HEADERS
+    ## Pre Compiled Header
     "hglpch.h"
+    ## Single header for HorusGL
     "horus/horus.h"
+    ## Core
     "horus/core/logger.h"
+    ## ImGui
+    "${VENDOR}/imgui/imgui.h"
+    "${VENDOR}/imgui/imgui_internal.h"
+    "${VENDOR}/imgui/imstb_rectpack.h"
+    "${VENDOR}/imgui/imstb_textedit.h"
+    "${VENDOR}/imgui/imstb_truetype.h"
 )
 
 # Source files
 set(HORUS_GL_SOURCES
+    ## Entry Point
     "main.cpp"
+    ## Core
     "horus/core/logger.cpp"
+    ## ImGui
+    "horus/imgui/imgui_build.cpp"
+    "${VENDOR}/imgui/imgui.cpp"
+    "${VENDOR}/imgui/imgui_demo.cpp"
+    "${VENDOR}/imgui/imgui_draw.cpp"
+    "${VENDOR}/imgui/imgui_tables.cpp"
+    "${VENDOR}/imgui/imgui_widgets.cpp"
 )
 
 # horus_gl executable

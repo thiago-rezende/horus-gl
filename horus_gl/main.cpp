@@ -55,6 +55,28 @@ int main()
     H_INFO("| Renderer: {}", glGetString(GL_RENDERER));
     H_INFO("| Version: {}", glGetString(GL_VERSION));
 
+    /* ImGui Initialization */
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+
+    ImGuiIO &io = ImGui::GetIO();
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;     // Enable Docking
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;   // Enable Multi-Viewport / Platform Windows
+
+    /* Setup Dear ImGui style */
+    ImGui::StyleColorsDark();
+    ImGuiStyle &style = ImGui::GetStyle();
+    style.WindowRounding = 0.0f;
+    style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+
+    /* Setup Platform/Renderer bindings */
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init("#version 460");
+
+    /* Some Variables to Tweak with ImGui Controlls */
+    bool show_demo_window = true;
+
     /* Loop until the user closes the window */
     H_INFO("Starting HorusGL");
     while (!glfwWindowShouldClose(window))
@@ -63,6 +85,33 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
 
+        /* ImGui Frame */
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        /* ImGui Render */
+        ImGui::ShowDemoWindow(&show_demo_window);
+
+        /* ImGui Draw Call */
+        ImGuiIO &io = ImGui::GetIO();
+        int width, height;
+        glfwGetWindowSize(window, &width, &height);
+        io.DisplaySize = ImVec2((float)width, (float)height);
+
+        /* Rendering */
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        /* Update Viewports */
+        if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+        {
+            GLFWwindow *backup_current_context = glfwGetCurrentContext();
+            ImGui::UpdatePlatformWindows();
+            ImGui::RenderPlatformWindowsDefault();
+            glfwMakeContextCurrent(backup_current_context);
+        }
+
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
@@ -70,8 +119,14 @@ int main()
         glfwPollEvents();
     }
 
+    /* ImGui Termination */
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
+
     /* GLFW Termination */
     H_DEBUG("[GLFW] Terminating GLFW");
+    glfwDestroyWindow(window);
     glfwTerminate();
 
     H_INFO("Closing");
