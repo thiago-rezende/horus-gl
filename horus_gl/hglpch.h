@@ -32,5 +32,8 @@
 #include <iostream>
 #include <string>
 
+/* GLAD */
+#include <glad/glad.h>
+
 /* GLFW */
 #include <GLFW/glfw3.h>

@@ -21,9 +21,15 @@ int main()
         return -1;
     }
 
+    /* GLFW window hints */
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+
     /* Create a windowed mode window and its OpenGL context */
     H_DEBUG("[GLFW] Creating window");
-    window = glfwCreateWindow(800, 600, "HorusGL", nullptr, nullptr);
+    window = glfwCreateWindow(800, 600, "HorusGL - OpenGL Starter Project", nullptr, nullptr);
     if (!window)
     {
         H_ERROR("[GLFW] Failed on window creation");
@@ -35,6 +41,19 @@ int main()
     /* Make the window's context current */
     H_DEBUG("[GLFW] Creating OpenGL context");
     glfwMakeContextCurrent(window);
+
+    /* Loading OpenGL extensions */
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        H_ERROR("[GLAD] Failed on initialization");
+        return 1;
+    }
+
+    /* Log OpenGL info */
+    H_INFO("OpenGL Info:");
+    H_INFO("| Vendor: {}", glGetString(GL_VENDOR));
+    H_INFO("| Renderer: {}", glGetString(GL_RENDERER));
+    H_INFO("| Version: {}", glGetString(GL_VERSION));
 
     /* Loop until the user closes the window */
     H_INFO("Starting HorusGL");

@@ -54,9 +54,13 @@ option(GLFW_INSTALL "Generate installation target" OFF)
 option(GLFW_VULKAN_STATIC "Assume the Vulkan loader is linked with the application" OFF)
 option(USE_MSVC_RUNTIME_LIBRARY_DLL "Use MSVC runtime library DLL" ON)
 
+# GLAD options
+option(GLAD_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" ON)
+
 # Adding the vendor libs directories
 add_subdirectory(${VENDOR}/spdlog)
 add_subdirectory(${VENDOR}/glfw)
+add_subdirectory(${VENDOR}/glad)
 
 # Setting project options
 option(HORUS_GL_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" ON)

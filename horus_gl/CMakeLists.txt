@@ -66,6 +66,7 @@ PUBLIC
     spdlog::spdlog_header_only
     OpenGL::GL
     glfw
+    glad
 )
 
 # Setting custom commandos to copy all needed files to the right location
