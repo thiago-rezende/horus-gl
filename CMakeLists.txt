@@ -61,11 +61,15 @@ option(GLAD_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" O
 option(BUILD_STATIC_LIBS "Build GLM as static lib" OFF)
 option(BUILD_SHARED_LIBS "Build GLM as shared lib" OFF)
 
+# STB Image options
+option(STB_IMAGE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" ON)
+
 # Adding the vendor libs directories
 add_subdirectory(${VENDOR}/spdlog)
 add_subdirectory(${VENDOR}/glfw)
 add_subdirectory(${VENDOR}/glad)
 add_subdirectory(${VENDOR}/glm)
+add_subdirectory(${VENDOR}/stb_image)
 
 # Setting project options
 option(HORUS_GL_USE_MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" ON)

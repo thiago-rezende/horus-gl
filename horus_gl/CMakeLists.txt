@@ -68,6 +68,7 @@ PUBLIC
     glfw
     glad
     glm
+    stb_image
 )
 
 # Setting custom commandos to copy all needed files to the right location
