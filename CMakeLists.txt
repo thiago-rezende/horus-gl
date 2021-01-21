@@ -13,10 +13,10 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 # Setting up the project name and version
-project(CMakeStarterProject
-        VERSION 2.2.4
-        DESCRIPTION "A Simple C++ Starter Project Using CMake"
-        HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
+project(HorusGL
+        VERSION 0.0.0
+        DESCRIPTION "A Simple OpenGL C++ Starter Project Using CMake"
+        HOMEPAGE_URL "https://github.com/thiago-rezende/horus-gl"
         LANGUAGES CXX)
 
 # Generate an config.h file based on config.in file
@@ -45,12 +45,7 @@ set(VENDOR ${CMAKE_SOURCE_DIR}/vendor)
 # Spdlog options
 option(SPDLOG_ENABLE_PCH "Build static or shared library using precompiled header to speed up compilation time" ON)
 
-# GoogleTest options
-option(BUILD_GMOCK "Builds the googlemock subproject" ON)
-option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" OFF)
-
 # Adding the vendor libs directories
-add_subdirectory(${VENDOR}/googletest)
 add_subdirectory(${VENDOR}/spdlog)
 
 # Setting project options
@@ -58,10 +53,6 @@ option(MSVC_DYNAMIC_LINKED_RUNTIME "Uses MSVC dynamic linked runtime" OFF)
 
 # Setting the project folders
 add_subdirectory(application)
-
-# Adding Tests
-enable_testing()
-add_subdirectory(tests)
 
 # Visual Studio Config
 if(MSVC)
@@ -72,14 +63,7 @@ if(MSVC)
     set_property(TARGET application PROPERTY FOLDER "Application")
     ## Utils
     set_property(TARGET copy_resources_application PROPERTY FOLDER "Utils")
-    ## Tests
-    set_property(TARGET application_tests PROPERTY FOLDER "Tests")
     ## Vendor
-    # Google Test
-    set_property(TARGET gtest PROPERTY FOLDER "Vendor/GoogleTest")
-    set_property(TARGET gtest_main PROPERTY FOLDER "Vendor/GoogleTest")
-    set_property(TARGET gmock PROPERTY FOLDER "Vendor/GoogleTest")
-    set_property(TARGET gmock_main PROPERTY FOLDER "Vendor/GoogleTest")
     # Spdlog
     set_property(TARGET spdlog PROPERTY FOLDER "Vendor/Spdlog")
 endif(MSVC)

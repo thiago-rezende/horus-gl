@@ -1,15 +1,15 @@
 #pragma once
 
 /* Porject Name */
-#define PROJECT_NAME "CMakeStarterProject"
+#define PROJECT_NAME "HorusGL"
 
-#define PROJECT_DESCRIPTION "A Simple C++ Starter Project Using CMake"
-#define PROJECT_HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
+#define PROJECT_DESCRIPTION "A Simple OpenGL C++ Starter Project Using CMake"
+#define PROJECT_HOMEPAGE_URL "https://github.com/thiago-rezende/horus-gl"
 
 /* Project Version [SEMVER] */
-#define PROJECT_VERSION_MAJOR 2
-#define PROJECT_VERSION_MINOR 2
-#define PROJECT_VERSION_PATCH 4
+#define PROJECT_VERSION_MAJOR 0
+#define PROJECT_VERSION_MINOR 0
+#define PROJECT_VERSION_PATCH 0
 
 /* Porject Version String [SEMVER] */
-#define PROJECT_VERSION "v2.2.4"
+#define PROJECT_VERSION "v0.0.0"
