@@ -1,5 +1,5 @@
 # HorusGL - OpenGL Starter Project
-![build-status-badge] ![license-badge] ![cpp-badge] ![cmake-badge]
+![license-badge] ![cpp-badge] ![cmake-badge]
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -54,8 +54,8 @@
 
  | Toolset | Windows |  Linux  |   MacOS    |
  | :-----: | :-----: | :-----: | :--------: |
- |   GCC   |    ✔️    |    ✔️    |    ✔️    |
- |  Clang   |    ✔️    |    ✔️    |    ✔️    |
+ |   GCC   |    ❔    |    ❔    |    ❔    |
+ |  Clang   |    ✔️    |    ❔    |    ❔    |
  |  MSVC   |    ✔️    | ------- | ---------- |
 
 <!-- Links -->
@@ -68,7 +68,7 @@
 [stb_image-url]: https://github.com/
 
 <!-- Badges -->
-[build-status-badge]: https://github.com/thiago-rezende/horus-gl/workflows/build/badge.svg
+<!-- [build-status-badge]: https://github.com/thiago-rezende/horus-gl/workflows/build/badge.svg -->
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [cmake-badge]: https://img.shields.io/badge/CMake-3.16.0-blueviolet.svg?style=flat-square
 [cpp-badge]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
