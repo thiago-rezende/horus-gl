@@ -14,7 +14,7 @@ endif()
 
 # Setting up the project name and version
 project(HorusGL
-        VERSION 0.0.0
+        VERSION 1.0.0
         DESCRIPTION "A Simple OpenGL C++ Starter Project Using CMake"
         HOMEPAGE_URL "https://github.com/thiago-rezende/horus-gl"
         LANGUAGES CXX)

@@ -30,25 +30,27 @@
  - Project structure
  ```
     .
-    ├── .github                     # Repository stuff.
-    ├── horus_gl                    # HorusGL folder.
-    |    ├── assets                 # Assets folder.
-    |    ├── horus                  # HorusGL files.
-    |    |   ├── core               # Core functionalities folder.
-    |    |   |   ├── logger.h       # Logger utils.
-    |    |   |   └── logger.cpp     # Logger utils implementation.
-    |    |   └── horus.h            # Single header for HorusGL features.
-    |    ├── hglpch.h               # Pre-compiled header.
-    |    ├── main.cpp               # HorusGL entrypoint.
-    |    └── CMakeLists.txt         # HorusGL CMake build script.
-    ├── vendor                      # Third-party packages will be here.
-    |    ├── spdlog                 # Fast C++ logging library.
-    |    ├── glfw                   # Library for window and input.
-    |    ├── glad                   # OpenGL extension loader.
-    |    ├── glm                    # OpenGL Mathematics.
-    |    ├── imgui                  # Bloat-free Graphical User interface.
-    |    └── stb_image              # Public domain image loader.
-    └── CMakeLists.txt              # Main CMake build script.
+    ├── .github                       # Repository stuff.
+    ├── horus_gl                      # HorusGL folder.
+    |    ├── assets                   # Assets folder.
+    |    ├── horus                    # HorusGL files.
+    |    |   ├── core                 # Core functionalities folder.
+    |    |   |   ├── logger.h         # Logger utils.
+    |    |   |   └── logger.cpp       # Logger utils implementation.
+    |    |   ├── imgui                # ImGui related.
+    |    |   |   └── imgui_build.cpp  # Put ImGui on the compilation unit.
+    |    |   └── horus.h              # Single header for HorusGL features.
+    |    ├── hglpch.h                 # Pre-compiled header.
+    |    ├── main.cpp                 # HorusGL entrypoint.
+    |    └── CMakeLists.txt           # HorusGL CMake build script.
+    ├── vendor                        # Third-party packages will be here.
+    |    ├── spdlog                   # Fast C++ logging library.
+    |    ├── glfw                     # Library for window and input.
+    |    ├── glad                     # OpenGL extension loader.
+    |    ├── glm                      # OpenGL Mathematics.
+    |    ├── imgui                    # Bloat-free Graphical User interface.
+    |    └── stb_image                # Public domain image loader.
+    └── CMakeLists.txt                # Main CMake build script.
 ```
  ## Compatibility
 
