@@ -6,6 +6,7 @@ set(HORUS_GL_INCLUDE_DIRS
 # Header files
 set(HORUS_GL_HEADERS
     "hglpch.h"
+    "horus/horus.h"
     "horus/core/logger.h"
 )
 

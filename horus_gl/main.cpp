@@ -1,5 +1,5 @@
 /* HorusGL */
-#include <horus.h>
+#include <horus/horus.h>
 
 /* CMake Configured File */
 #include <config.h>
